@@ -39,3 +39,4 @@ for (const [key, value] of map) {
 //     console.log(key, ':-', value);
     
 // }
+//object iterable nthi etle ans nhi aavto hto khli map iterable che ena mate ave four.js jovanu obj ne iterable krva mate for in loop aave 
