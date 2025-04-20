@@ -1,0 +1,45 @@
+<!-- <button onclick="toggleDark()">Toggle Dark Mode</button>
+<body id="body">
+  <script>
+    function toggleDark() {
+      document.getElementById("body").classList.toggle("dark-mode");
+    }
+  </script>
+
+  <style>
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+</body> -->
+
+<div id="div">This is the default text</div>
+
+<button onclick="togdark()">Click me to change</button>
+
+<script>
+  function togdark() {
+    const myDiv = document.getElementById("div");
+    myDiv.classList.toggle("dk-mode");
+    myDiv.innerText = "The mode has been toggled!"; // This updates the text
+  }
+</script>
+
+<style>
+  #div {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  .dk-mode {
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    padding: 50px;
+  }
+</style>
+
