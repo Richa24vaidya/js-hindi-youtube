@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+ <!-- // from chatgpt -->
+<html>
+<head>
+  <title>Simple Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    #cartItems li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🛒 My Shopping Cart</h2>
+
+  <!-- Cart item list -->
+  <ul id="cartItems"></ul>
+
+  <!-- Add Item -->
+  <h3>Add Item</h3>
+  <input type="text" id="addInput" placeholder="Enter item name">
+  <button onclick="addItem()">Add to Cart</button>
+
+  <!-- Delete Item -->
+  <h3>Delete Item</h3>
+  <input type="text" id="deleteInput" placeholder="Enter item name to delete">
+  <button onclick="deleteItem()">Remove from Cart</button>
+
+  <script>
+    // Our shopping cart array
+    let cart = [];
+
+    // Function to update the cart on the screen
+    function showCart() {
+      const cartList = document.getElementById("cartItems");
+      cartList.innerHTML = ""; // clear old items
+
+      for (let item of cart) {
+        const li = document.createElement("li");
+        li.textContent = item;
+        cartList.appendChild(li);
+      }
+    }
+
+    // Function to add item to cart
+    function addItem() {
+      const input = document.getElementById("addInput");
+      const newItem = input.value.trim();
+
+      if (newItem) {
+        cart.push(newItem); // Add to array
+        input.value = ""; // Clear input box
+        showCart(); // Update UI
+      }
+    }
+
+    // Function to delete item from cart
+    function deleteItem() {
+      const input = document.getElementById("deleteInput");
+      const itemToDelete = input.value.trim();
+
+      const index = cart.indexOf(itemToDelete);
+      if (index !== -1) {
+        cart.splice(index, 1); // Remove 1 item at index
+        showCart(); // Update UI
+      }
+
+      input.value = ""; // Clear input box
+    }
+  </script>
+</body>
+</html>
