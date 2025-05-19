@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function findDuplicates(arr) {
+  let seen = new Set();
+  let duplicates = [];
+
+  for (let item of arr) {
+    if (seen.has(item)) {
+      duplicates.push(item);
+    } else {
+      seen.add(item);
+    }
+  }
+
+  return duplicates;
+}
+
+console.log(findDuplicates([1, 2, 3, 2, 4, 5, 1])); // [2, 1]
+
+  </script>
+</body>
+</html>
